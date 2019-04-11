@@ -1,0 +1,154 @@
+<form
+  [formGroup]="signUpForm"
+  (ngSubmit)="onSubmit()"
+>
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="FirstName"
+      formControlName="first_name"
+    >
+    <mat-error *ngIf="signUpForm.get('first_name').hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="LastName"
+      formControlName="last_name"
+    >
+    <mat-error *ngIf="signUpForm.get('last_name').hasError('required')">
+      Last Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="E-Mail"
+      formControlName="email"
+    >
+    <mat-error *ngIf="signUpForm.get('email').hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.get('email').hasError('email')">
+      Not Email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Nick Name"
+      formControlName="nickname"
+    >
+    <mat-error *ngIf="signUpForm.get('nickname').hasError('required')">
+      Nick Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Phone"
+      formControlName="phone"
+    >
+    <mat-error *ngIf="signUpForm.get('phone').hasError('required')">
+      Phone is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Gender"
+      formControlName="gender_orientation"
+    >
+    <mat-error *ngIf="signUpForm.get('gender_orientation').hasError('required')">
+      Gender <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="City"
+      formControlName="city"
+    >
+    <mat-error *ngIf="signUpForm.get('city').hasError('required')">
+      City <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Country"
+      formControlName="country"
+    >
+    <mat-error *ngIf="signUpForm.get('country').hasError('required')">
+      Country <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-30">
+    <input
+      matInput
+      placeholder="day"
+      formControlName="date_of_birth_day"
+    >
+    <mat-error *ngIf="signUpForm.get('date_of_birth_day').hasError('required')">
+      day is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-30">
+    <input
+      matInput
+      placeholder="month"
+      formControlName="date_of_birth_month"
+    >
+    <mat-error *ngIf="signUpForm.get('date_of_birth_month').hasError('required')">
+      Fmonth is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-30">
+    <input
+      matInput
+      placeholder="year"
+      formControlName="date_of_birth_year"
+    >
+    <mat-error *ngIf="signUpForm.get('date_of_birth_year').hasError('required')">
+      year is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Password"
+      formControlName="password"
+    >
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Repeat Password"
+      formControlName="repeatPassword"
+    >
+    <mat-error *ngIf="signUpForm.get('repeatPassword').hasError('required')">
+      First name is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.hasError('notEqual')">
+      First name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <p *ngIf="signUpForm.hasError('notEqual')">
+    Password not equal
+  </p>
+
+  <h3 *ngIf="serverMessage" style="color: red">{{serverMessage}}</h3>
+  <button mat-raised-button color="primary" class="submit-btn">Signup</button>
+</form>
