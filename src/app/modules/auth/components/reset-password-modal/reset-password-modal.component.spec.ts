@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePageComponent } from './home-page.component';
+import { ResetPasswordModalComponent } from './reset-password-modal.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('ResetPasswordModalComponent', () => {
+  let component: ResetPasswordModalComponent;
+  let fixture: ComponentFixture<ResetPasswordModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ ResetPasswordModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(ResetPasswordModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

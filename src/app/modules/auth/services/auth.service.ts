@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { environment } from "../../../../environments/environment";
+import { environment } from "@env/environment";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { LoginServerAnswer } from "../interfaces/LoginServerAnswer";
@@ -21,5 +21,11 @@ export class AuthService {
         return res;
       })
     );
+  }
+  signUp(cred): Observable<LoginServerAnswer>  {
+    return this.http.post<LoginServerAnswer>(`${this.apiUrl}/public/auth/signup`, cred);
+  }
+  resetPassword(cred): Observable<LoginServerAnswer> {
+    return this.http.post<LoginServerAnswer>(`${this.apiUrl}/public/auth/reset-password`, cred);
   }
 }
