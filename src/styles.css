@@ -1,8 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/nova-light/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
 /* Default classes */
 .w-100 {
   width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hidden{
+  display: none;
+  opacity: 0;
+}
+
+@media (min-width:576px){
+  .container{max-width:540px}
+}
+
+@media (min-width:768px){
+  .container{max-width:720px}
+}
+
+@media (min-width:992px){
+  .container{max-width:960px}
+}
+@media (min-width:1200px){
+  .container{max-width:1140px}
+}
+
+/*Default styles*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
 }
 

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {GlobalAuthService} from "../../../../services/global-auth.service";
 import {LoginFormComponent} from "../../components/login-form/login-form.component";
 
@@ -13,11 +13,15 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private globalAuth: GlobalAuthService
+    private globalAuth: GlobalAuthService,
+    private  activatedRoute: ActivatedRoute
   ) {
   }
 
   ngOnInit() {
+    this.activatedRoute.data.subscribe((value)=>{
+      // console.log(value);
+    });
     if (this.globalAuth.isLogin) {
       this.router.navigate(['/']);
     }

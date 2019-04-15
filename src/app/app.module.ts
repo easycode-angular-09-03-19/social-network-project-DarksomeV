@@ -5,6 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
+import { NavbarComponent } from './common/components/navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from "primeng/api";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 // 1. Создать глобальный сервис GlobalAuth
 // 1.1 get isLogin: получать из ls токен и возвращать true или false
@@ -15,15 +21,19 @@ import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    ToastModule,
+    AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
