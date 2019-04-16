@@ -1,0 +1,28 @@
+<mat-toolbar *ngIf="!isHidden" color="primary" class="navbar">
+  <span>Menu</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+<div class="notifications-area">
+  <button class="notification-bell" (click)="notificationBellClick()"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge">{{notifications?.length}}</span></button>
+  <div class="dropdown-menu-custom" [ngClass]="{'hidden': isNotificationsHidden}">
+    <span class="dropdown-menu-custom__title">Notifications</span>
+    <ul class="notifications-list">
+      <li *ngFor="let notification of notifications">
+        <a href="" class="notifications-item">
+          <div class="notifications-item-img">
+            <img *ngIf="notification.user_creator_id" src="{{notification.user_creator_id.avatar}}" alt="">
+          </div>
+          <div class="notifications-item-info">
+            <p class="notifications-item-text">
+              <span class="user" *ngIf="notification.user_creator_id">{{notification.user_creator_id.full_name}}</span>
+              {{notification.message}}
+            </p>
+            <span class="notifications-item-date">{{notification.created_at | date :  "MMM dd,y"}}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</mat-toolbar>
