@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
     )
       .subscribe((event) => {
         this.activatedRoute.firstChild.data.subscribe((value) => {
+          console.log(value);
           this.isHidden = !!value.withoutHeader;
         });
       });
