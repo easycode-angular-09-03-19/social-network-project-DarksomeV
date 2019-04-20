@@ -28,27 +28,6 @@
   border-radius: 5px;
 }
 
-.notifications-list li>a{
-  border-bottom: 1px solid #e6e6e6;
-  padding: 20px 30px;
-  background-color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.notifications-item-img{
-  margin-right: 10px;
-  width: 70px;
-  height: 70px;
-  margin-right: 18px;
-  border-radius: 50%;
-  background-color: #e6e6e6;
-  overflow: hidden;
-}
-
-.notifications-item-info p{
-  margin-bottom: 0;
-}
 
 .notification-bell{
   background: transparent;

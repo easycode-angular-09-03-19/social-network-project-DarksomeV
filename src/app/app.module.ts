@@ -4,12 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
-import { NavbarComponent } from './common/components/navbar/navbar.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from "primeng/api";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NavbarModule } from "./modules/navbar/navbar.module";
+import { TokenInterceptor} from "./interceptors/token.interceptor";
 
 
 // 1. Создать глобальный сервис GlobalAuth
@@ -22,18 +22,24 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
     ToastModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    NavbarModule
   ],
-  providers: [MessageService],
+  providers: [
+    MessageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

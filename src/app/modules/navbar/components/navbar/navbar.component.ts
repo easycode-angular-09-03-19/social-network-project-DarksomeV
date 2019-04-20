@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { NotificationsService } from "../../../services/notifications.service";
-import { Notification } from "../../../interfaces/Notification";
+import { NotificationsService } from "../../../../services/notifications.service";
+import { Notification } from "../../../../interfaces/Notification";
 
 
 @Component({

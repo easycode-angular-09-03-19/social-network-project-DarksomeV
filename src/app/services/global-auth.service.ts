@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GlobalAuthService {
-  private token: string;
   constructor() { }
 
   get isLogin() {
@@ -13,5 +12,9 @@ export class GlobalAuthService {
     } else {
       return false;
     }
+  }
+
+  public get token() {
+    return localStorage.getItem('sn_app_token') || '';
   }
 }
