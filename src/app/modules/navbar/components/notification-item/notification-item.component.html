@@ -1,0 +1,14 @@
+<li>
+  <a href="" class="notifications-item">
+    <div class="notifications-item-img">
+      <img *ngIf="notification.user_creator_id" src="{{notification.user_creator_id.avatar}}" alt="">
+    </div>
+    <div class="notifications-item-info">
+      <p class="notifications-item-text">
+        <span class="user" *ngIf="notification.user_creator_id">{{notification.user_creator_id.full_name}}</span>
+        {{notification.message}}
+      </p>
+      <span class="notifications-item-date">{{notification.created_at | date :  "MMM dd,y"}}</span>
+    </div>
+  </a>
+</li>

@@ -1,0 +1,85 @@
+.challenges-item{
+  margin-bottom: 30px;
+}
+
+.challenges-item:hover .item-button{
+  opacity: 1;
+}
+
+.item-title{
+  font-size: 18px;
+  margin-bottom: 8px;
+  display: block;
+  text-align: center;
+}
+
+.item-button{
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: rgba(0,0,0,.75);
+  transition: 0.2s all linear;
+}
+
+.item-content{
+  height: 240px;
+  display: block;
+  background-color: #d8d8d8;
+  line-height: 0;
+  border-radius: 2px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.item-overlay{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-info {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: auto;
+  background-color: rgba(0,0,0,.75);
+  line-height: 1;
+  text-transform: uppercase;
+  display: flex;
+}
+
+.item-info .item-info__block{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+
+.item-info .item-info__block .count{
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+
+.item-info .item-info__block .description{
+  font-size: 12px;
+}
+
+
+.item-info .item-info__block:nth-child(2) {
+  border-right: 1px solid #7303c0;
+  border-left: 1px solid #7303c0;
+}
+
+.item-img{
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: unset;
+  width: auto;
+}
