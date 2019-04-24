@@ -1,0 +1,10 @@
+<div class="selfie-item">
+  <img [src]="img?.url" alt="">
+  <div class="selfie-item-overlay d-flex flex-column justify-content-between pos-absolute">
+    <div class="overlay-bottom">
+      <span class="views-count mr-2">views: {{img?.views.length}}</span>
+      <span class="likes-count">likes: {{img?.likes.length}}</span>
+    </div>
+  </div>
+</div>
+

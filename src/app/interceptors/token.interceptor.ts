@@ -11,7 +11,6 @@ export class TokenInterceptor implements HttpInterceptor{
   ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(req);
     req = req.clone({
       setHeaders:{
         'x-access-token': `${this.globalAuth.token}`

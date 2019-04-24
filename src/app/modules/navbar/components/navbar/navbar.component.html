@@ -1,5 +1,6 @@
 <mat-toolbar *ngIf="!isHidden" color="primary" class="navbar">
   <span>Menu</span>
+  <a href="" *ngIf="userId" [routerLink]="['/users/', userId]">User profile</a>
 
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>

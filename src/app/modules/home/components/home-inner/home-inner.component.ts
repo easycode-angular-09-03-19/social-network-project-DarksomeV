@@ -14,7 +14,4 @@ export class HomeInnerComponent implements OnInit {
 
   ngOnInit() {
   }
-  onClick() {
-    this.messageService.add({severity: 'success', summary: 'Service Message', detail: 'Via MessageService'});
-  }
 }

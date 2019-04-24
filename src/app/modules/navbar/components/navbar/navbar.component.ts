@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
-import { NotificationsService } from "../../../../services/notifications.service";
-import { Notification } from "../../../../interfaces/Notification";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, ActivationEnd, Router} from '@angular/router';
+import {filter} from 'rxjs/operators';
+import {NotificationsService} from "../../../../services/notifications.service";
+import {Notification} from "../../../../interfaces/Notification";
+import {CurrentUserStoreService} from "../../../../common/services/current-user-store.service";
 
 
 @Component({
@@ -12,16 +13,21 @@ import { Notification } from "../../../../interfaces/Notification";
 })
 export class NavbarComponent implements OnInit {
   isHidden = true;
+  userAvatar;
+  userId;
   isNotificationsHidden = true;
   notifications;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private notificationService: NotificationsService
-  ) { }
+    private notificationService: NotificationsService,
+    private currentUser: CurrentUserStoreService
+  ) {
+  }
 
   ngOnInit() {
-    this.notificationService.getNotifications().subscribe((data: Notification[])=>{
+    this.notificationService.getNotifications().subscribe((data: Notification[]) => {
       this.notifications = data;
     });
 
@@ -30,14 +36,20 @@ export class NavbarComponent implements OnInit {
     )
       .subscribe((event) => {
         this.activatedRoute.firstChild.data.subscribe((value) => {
-          console.log(value);
           this.isHidden = !!value.withoutHeader;
         });
       });
+
+    this.currentUser.userWatcher.subscribe(({avatar, _id}) => {
+      if (_id) {
+        this.userAvatar = avatar;
+        this.userId = _id;
+      }
+    })
   }
 
 
-  notificationBellClick(){
+  notificationBellClick() {
     this.isNotificationsHidden = !this.isNotificationsHidden;
   }
 }
