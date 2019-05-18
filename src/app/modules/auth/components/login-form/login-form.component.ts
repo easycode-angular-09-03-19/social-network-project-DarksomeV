@@ -3,6 +3,7 @@ import { AuthService } from "../../services/auth.service";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { LoginServerAnswer } from "../../interfaces/LoginServerAnswer";
+import {CurrentUserStoreService} from "../../../../common/services/current-user-store.service";
 
 @Component({
   selector: 'app-login-form',
@@ -17,7 +18,8 @@ export class LoginFormComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private currentUser: CurrentUserStoreService,
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     this.authService.login({ ...this.loginForm.value }).subscribe((res: LoginServerAnswer) => {
       if (!res.error) {
+        this.currentUser.initCurrentUser();
         this.router.navigate(['/']);
       }
     });

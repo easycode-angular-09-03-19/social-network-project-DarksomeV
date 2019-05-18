@@ -38,4 +38,22 @@ export class UserService {
     const id = this.globalAuth.userId;
     return this.http.post<UploadCoverServerAnswer>(`${this.apiUrl}/public/users/upload-cover/${id}`, formData);
   }
+
+  uploadPhotos(files: any[]) {
+    const formData = new FormData();
+    files.forEach((file) => formData.append('userPhotos', file));
+    const id = this.globalAuth.userId;
+    return this.http.post(
+      `${this.apiUrl}/public/users/upload-photos/${id}`,
+      formData
+    );
+  }
+
+  following(id: string){
+    const formData = {};
+    return this.http.put(
+      `${this.apiUrl}/public/users/following/${id}`,
+      formData
+    );
+  }
 }

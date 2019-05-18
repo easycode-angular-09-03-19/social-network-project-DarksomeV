@@ -17,7 +17,7 @@ export class CurrentUserStoreService {
     private  http: HttpClient,
     private globalAuth: GlobalAuthService
   ) { }
-  public get info() {
+  public get info(): any {
     return this.currentUser;
   }
 

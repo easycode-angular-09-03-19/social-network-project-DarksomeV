@@ -11,6 +11,7 @@ import {Challenge} from "../../interfaces/Challenge";
 export class HomePageComponent implements OnInit {
   homePageData: HomeContent;
   challenges: Challenge[];
+  isLoading = true;
   constructor(
     private homeService: HomeService,
   ) { }
@@ -21,6 +22,10 @@ export class HomePageComponent implements OnInit {
     ).subscribe(([homePageData, { challenges }]: any)=>{
       this.challenges = challenges;
       this.homePageData = homePageData;
+    }, (err) => {
+      console.log(err);
+    }, ()=>{
+      this.isLoading = false;
     });
   }
 

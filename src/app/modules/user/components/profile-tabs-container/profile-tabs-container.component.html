@@ -1,3 +1,16 @@
-<ng-container [ngSwitch]="activeTab">
-  <app-profile-selfies  *ngSwitchCase="'selfies'"></app-profile-selfies>
+<ng-container [ngSwitch]="activeTab| async">
+  <app-profile-selfies
+    [userId]="userId"
+    [isCurrentUser]="isCurrentUser"
+    *ngSwitchCase="'selfies'"></app-profile-selfies>
+  <app-profile-favourites
+    [userId]="userId"
+    *ngSwitchCase="'favourites'"></app-profile-favourites>
+  <app-profile-followings
+    [userId]="userId"
+    *ngSwitchCase="'followings'"></app-profile-followings>
+  <app-profile-followers
+    [userId]="userId"
+    *ngSwitchCase="'followers'"></app-profile-followers>
 </ng-container>
+

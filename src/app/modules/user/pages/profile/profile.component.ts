@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   user: UserServerAnswer;
   authUserId;
   id;
+  tempId;
   activeTab ='selfies';
   constructor(
     private globalAuth: GlobalAuthService,
@@ -22,13 +23,18 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((data: any) => {
+      this.tempId = data.params.id;
+      this.getUser();
+    });
+
     this.id = this.route.snapshot.params.id;
     this.authUserId = this.globalAuth.userId;
-    this.getUser();
+
   }
 
   getUser() {
-    this.userService.getUserById(this.id).subscribe((user: UserServerAnswer)=>{
+    this.userService.getUserById(this.tempId).subscribe((user: UserServerAnswer)=>{
       if (user._id) {
         this.user = user;
       }
@@ -37,7 +43,7 @@ export class ProfileComponent implements OnInit {
 
   uploadCover(cover){
     this.userService.uploadCover(cover).subscribe((res: UploadCoverServerAnswer)=>{
-      if (!res.error){
+      if (!res.error) {
         this.getUser();
       }
     });

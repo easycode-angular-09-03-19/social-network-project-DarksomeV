@@ -1,4 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CurrentUserStoreService} from "../../../../common/services/current-user-store.service";
+import {UserService} from "../../../../common/services/user.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-profile-cover',
@@ -9,7 +12,12 @@ export class ProfileCoverComponent implements OnInit {
   @Input() cover;
   @Input() isCurrentUser;
   @Output('upload') upload = new EventEmitter();
-  constructor() { }
+  constructor(
+    private currentUser: CurrentUserStoreService,
+    private userService: UserService,
+    private route: ActivatedRoute,
+
+  ) { }
 
   ngOnInit() {
   }

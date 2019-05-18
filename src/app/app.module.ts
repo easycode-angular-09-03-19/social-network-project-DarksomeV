@@ -10,6 +10,8 @@ import { MessageService } from "primeng/api";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NavbarModule } from "./modules/navbar/navbar.module";
 import { TokenInterceptor} from "./interceptors/token.interceptor";
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 
 // 1. Создать глобальный сервис GlobalAuth
@@ -30,7 +32,8 @@ import { TokenInterceptor} from "./interceptors/token.interceptor";
     BrowserAnimationsModule,
     ToastModule,
     AngularFontAwesomeModule,
-    NavbarModule
+    NavbarModule,
+    MatProgressBarModule
   ],
   providers: [
     MessageService,

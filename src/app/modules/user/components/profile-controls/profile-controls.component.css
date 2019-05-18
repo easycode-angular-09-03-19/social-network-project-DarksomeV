@@ -48,4 +48,17 @@ p{
   flex-direction: column;
 }
 
+.tab-controls{
+  display: flex;
+  list-style: none;
+}
+
+.tab-controls li + li{
+  margin-left: 20px;
+}
+
+.tab-controls li a.active{
+  color: #000000;
+}
+
 

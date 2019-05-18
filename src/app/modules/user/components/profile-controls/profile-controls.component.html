@@ -19,10 +19,21 @@
       </div>
 
       <div class="col-6">
-          <div class="my-selfies text-center">
-            <p>{{user?.my_images.length}}</p>
-            <p>Selfies</p>
-          </div>
+        <nav *ngIf="user">
+          <ul class="tab-controls">
+            <li *ngFor="let item of tabList">
+              <a
+                href=""
+                [routerLink]="['/users', user._id]"
+                [queryParams]="{tab: item.tab}"
+                [ngClass]="{active: (activeTab|async) === item.tab}"
+              >
+                {{user[item.in_api]?.length}}
+                {{ item.text }}
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

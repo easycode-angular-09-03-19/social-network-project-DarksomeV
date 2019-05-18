@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of followings">
+      <div class="col-lg-3 col-sm-6 col-sm-12 p-0">
+        <app-following-item [item]="item"></app-following-item>
+      </div>
+    </ng-container>
+  </div>
+</div>

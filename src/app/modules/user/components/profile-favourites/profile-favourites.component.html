@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of favourites">
+      <div class="col-lg-3 col-sm-6 col-sm-12 p-0">
+        <app-favourites-item [favourite]="item"></app-favourites-item>
+      </div>
+    </ng-container>
+  </div>
+</div>
