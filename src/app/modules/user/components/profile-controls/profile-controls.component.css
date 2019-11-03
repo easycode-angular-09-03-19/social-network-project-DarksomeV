@@ -1,0 +1,51 @@
+.profile-panel{
+  background: white;
+  padding: 10px 0;
+}
+
+p{
+  margin: 0;
+}
+/*Тут для инфо пользователя*/
+.profile-section{
+ display: flex;
+  justify-content: space-around;
+}
+
+.user-avatar{
+  position: relative;
+  max-width: 138px;
+  width: 100%;
+  margin-right: 18px;
+}
+
+.user-avatar-inner{
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  background-color: #b0b0b0;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+}
+
+.user-avatar-inner img{
+  width: 100%;
+}
+
+.profile-info{
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-stats{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+

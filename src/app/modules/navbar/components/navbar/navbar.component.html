@@ -1,0 +1,16 @@
+<mat-toolbar *ngIf="!isHidden" color="primary" class="navbar">
+  <span>Menu</span>
+  <a href="" *ngIf="userId" [routerLink]="['/users/', userId]">User profile</a>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+<div class="notifications-area">
+  <button class="notification-bell" (click)="notificationBellClick()"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge">{{notifications?.length}}</span></button>
+  <div class="dropdown-menu-custom" [ngClass]="{'hidden': isNotificationsHidden}">
+    <span class="dropdown-menu-custom__title">Notifications</span>
+    <ul class="notifications-list">
+      <app-notification-list [notifications]="notifications"></app-notification-list>
+    </ul>
+  </div>
+</div>
+</mat-toolbar>

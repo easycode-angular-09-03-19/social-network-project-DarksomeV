@@ -1,0 +1,25 @@
+<div class="challenges-item">
+  <span class="item-title">{{challenge.challenge_name}}</span>
+  <a href="#" class="item-content">
+    <img src="{{challenge.background}}" class="item-img" alt="">
+    <div class="item-overlay">
+      <div class="item-button">
+
+      </div>
+      <div class="item-info">
+        <div class="awards item-info__block">
+          <span class="count">{{challenge.awards}}</span>
+          <span class="description">Votes</span>
+        </div>
+        <div class="days item-info__block">
+          <span class="count">0</span>
+          <span class="description">{{challenge.end_date | date :  "MMM dd,y"}}</span>
+        </div>
+        <div class="votes item-info__block">
+          <span class="count">{{challenge.votes}}</span>
+          <span class="description">Votes</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

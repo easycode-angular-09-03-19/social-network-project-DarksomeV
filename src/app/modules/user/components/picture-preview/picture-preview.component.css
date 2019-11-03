@@ -1,0 +1,38 @@
+.selfie-item{
+  background-color: #000;
+  line-height: 0;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.selfie-item img{
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  max-width: none;
+  height: 100%;
+  width: auto;
+}
+
+.selfie-item:hover .selfie-item-overlay{
+  opacity: 1;
+}
+
+.selfie-item-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom,rgba(0,0,0,.3) 0,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(0,0,0,.3) 100%);
+  opacity: 0;
+}
+
+.overlay-bottom{
+  color: #ffffff;
+}

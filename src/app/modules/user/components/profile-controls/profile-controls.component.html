@@ -1,0 +1,29 @@
+<div class="profile-panel">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-6 profile-section">
+          <div class="user-avatar">
+            <div class="user-avatar-inner">
+              <img [src]="user?.avatar" alt="">
+            </div>
+          </div>
+          <div class="profile-info">
+            <span class="profile-name">{{user?.full_name}}</span>
+            <span class="profile-country">{{user?.country}}</span>
+          </div>
+        <div class="profile-stats">
+          <span class="stats-points-count">{{user?.rank.points}}</span>
+          <span class="stats-points-desc">Points</span>
+        </div>
+      </div>
+
+      <div class="col-6">
+          <div class="my-selfies text-center">
+            <p>{{user?.my_images.length}}</p>
+            <p>Selfies</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

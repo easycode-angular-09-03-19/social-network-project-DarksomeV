@@ -1,0 +1,19 @@
+<section class="inner">
+  <div class="inner-top" [ngStyle]="{'background-image':'url(' + data?.homeBackground + ')'}">
+    <div class="container">
+      <div class="inner-top__content">
+        <span class="title">
+          Be Most Wanted
+        </span>
+        <p>{{ data?.innerText }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="inner-bottom">
+    <ul class="regions">
+      <li><span>{{data?.cities}}</span> Cities</li>
+      <li><span>{{data?.countries}}</span> Countries</li>
+      <li>In <span>{{data?.regions}}</span> Regions In The world</li>
+    </ul>
+  </div>
+</section>

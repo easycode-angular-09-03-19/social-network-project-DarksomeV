@@ -1,0 +1,9 @@
+<div class="pictures-wrap">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let image of images">
+        <app-picture-preview class="col-12 col-lg-6 col-xl-4 picture" [img]="image"></app-picture-preview>
+      </ng-container>
+    </div>
+  </div>
+</div>
